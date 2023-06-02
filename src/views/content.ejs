@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles/reset.css" />
+    <link rel="stylesheet" href="../assets/styles/content.css" />
+    <link rel="stylesheet" href="../assets/styles/header.css" />
+    <title>Conteúdo</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-container">
+        <p class="title">Agendify</p>
+        <div class="btn-box">
+          <button class="btn-header">
+            <img src="../assets/img/login.svg" alt="Techs" class="img-btn" />
+          </button>
+          <button class="btn-header">
+            <img
+              src="../assets/img/code.svg"
+              alt="Techs"
+              class="img-btn"
+              onclick="redirectToPage('technology')"
+            />
+          </button>
+          <button class="btn-header">
+            <img
+              src="../assets/img/about.svg"
+              alt="About"
+              class="img-btn"
+              onclick="redirectToPage('about')"
+            />
+          </button>
+          <button class="btn-header">
+            <img
+              src="../assets/img/home.svg"
+              alt="Home"
+              class="img-btn"
+              onclick="redirectToPage('')"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function redirectToPage(page) {
+      window.location.href = "/" + page;
+    }
+  </script>
+</html>

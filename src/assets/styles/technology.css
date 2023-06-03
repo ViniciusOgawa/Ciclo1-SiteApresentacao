@@ -16,6 +16,12 @@ main {
   gap: 40px;
 }
 
+.techs-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 h1 {
   font-weight: bold;
   font-size: 2rem;
@@ -29,9 +35,11 @@ h2 {
 ul {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  margin-left: 20px;
 }
 
-strong {
-  font-weight: bold;
+a {
+  text-decoration: underline;
+  color: black;
 }

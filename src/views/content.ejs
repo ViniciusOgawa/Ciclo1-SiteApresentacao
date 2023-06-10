@@ -18,7 +18,12 @@
         <p class="title">Agendify</p>
         <div class="btn-box">
           <button class="btn-header">
-            <img src="../assets/img/login.svg" alt="Techs" class="img-btn" />
+            <img
+              src="../assets/img/user.svg"
+              alt="User"
+              class="img-btn"
+              onclick="redirectToPage('about-me')"
+            />
           </button>
           <button class="btn-header">
             <img
@@ -73,13 +78,44 @@
             de contatos cadastrados.
           </li>
         </ul>
+        <button id="openModalBtn">Login</button>
       </div>
     </main>
-  </body>
 
-  <script>
-    function redirectToPage(page) {
-      window.location.href = "/" + page;
-    }
-  </script>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="header-modal">
+          <h3 class="title-modal">Login</h3>
+          <span id="closeModalBtn" class="close">&times;</span>
+        </div>
+        <div class="body-modal">
+          <div class="box-modal">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Digite seu email..."
+              class="input-modal"
+            />
+          </div>
+          <div class="box-modal">
+            <label class="label-modal">Senha</label>
+            <input
+              type="password"
+              placeholder="Digite sua senha..."
+              class="input-modal"
+            />
+          </div>
+          <Button class="button-modal">Entrar</Button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/scripts/index.js"></script>
+
+    <script>
+      function redirectToPage(page) {
+        window.location.href = "/" + page;
+      }
+    </script>
+  </body>
 </html>

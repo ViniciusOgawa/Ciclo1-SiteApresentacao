@@ -3,8 +3,6 @@ const modal = document.getElementById("myModal");
 const closeModalBtn = document.getElementById("closeModalBtn");
 
 openModalBtn.addEventListener("click", function () {
-  console.log("ola");
-
   modal.style.display = "block";
 });
 

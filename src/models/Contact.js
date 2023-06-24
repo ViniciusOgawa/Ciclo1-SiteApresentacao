@@ -1,13 +1,13 @@
-// const { Model, DataTypes, Sequelize } = require("sequelize");
 const { Model, Sequelize } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
+  class Contact extends Model {
     static associate(models) {
-      User.hasMany(models.Contact, { foreignKey: "userId" });
+      Contact.belongsTo(models.User, { foreignKey: "userId" });
+      Contact.belongsTo(models.Address, { foreignKey: "addressId" });
     }
   }
-  User.init(
+  Contact.init(
     {
       id: {
         type: DataTypes.INTEGER,
@@ -24,13 +24,17 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
       phoneNumber: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      addressId: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
       },
       createdAt: {
         type: DataTypes.DATE,
@@ -45,9 +49,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "User",
-      tableName: "users",
+      modelName: "Contact",
+      tableName: "contacts",
     }
   );
-  return User;
+  return Contact;
 };

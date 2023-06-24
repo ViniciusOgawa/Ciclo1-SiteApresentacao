@@ -1,6 +1,10 @@
 const Sequelize = require("sequelize");
 const configDB = require("../config/database");
 
-const connection = new Sequelize(configDB);
+const sequelize = new Sequelize(configDB);
 
-module.exports = connection;
+const User = require("../models/User")(sequelize, Sequelize);
+const Contact = require("../models/Contact")(sequelize, Sequelize);
+const Address = require("../models/Address")(sequelize, Sequelize);
+
+module.exports = { User, Contact, Address };

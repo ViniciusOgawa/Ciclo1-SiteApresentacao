@@ -3,8 +3,8 @@ const { Model, Sequelize } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Contact extends Model {
     static associate(models) {
-      Contact.belongsTo(models.User, { foreignKey: "userId" });
-      Contact.belongsTo(models.Address, { foreignKey: "addressId" });
+      Contact.belongsTo(models.User, { foreignKey: "user_id" });
+      Contact.belongsTo(models.Address, { foreignKey: "address_id" });
     }
   }
   Contact.init(
@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
       name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
       },
       email: {
         type: DataTypes.STRING,
@@ -36,12 +35,12 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      createdAt: {
+      created_at: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
-      updatedAt: {
+      updated_at: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),

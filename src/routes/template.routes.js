@@ -7,7 +7,7 @@ const {
   technologyController,
   contentController,
   aboutMeController,
-} = require("../controllers/pageController");
+} = require("../controllers/page.controller");
 
 templateRouter.get("/about", aboutController);
 templateRouter.get("/about-me", aboutMeController);

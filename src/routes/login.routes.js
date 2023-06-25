@@ -1,5 +1,16 @@
 const { Router } = require("express");
+const {
+  ensureDataIsValid,
+} = require("../middleware/ensureDataIsValid.middleware");
+const { createTokenController } = require("../controllers/login.controller");
+const { createTokenSchema } = require("../schemas/login.schema");
 
-const loginRouter = Router();
+const loginRoutes = Router();
 
-module.exports = loginRouter;
+loginRoutes.post(
+  "",
+  ensureDataIsValid(createTokenSchema),
+  createTokenController
+);
+
+module.exports = loginRoutes;

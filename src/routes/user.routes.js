@@ -16,32 +16,42 @@ const {
   ensureEmailExists,
 } = require("../middleware/ensureEmailExists.middleware");
 const {
+  ensureTokenIsValid,
+} = require("../middleware/ensureTokenIsValid.middleware");
+const {
+  ensureUserPermission,
+} = require("../middleware/ensureUserPermission.middleware");
+const {
   userSchemaRequest,
   userSchemaUpdate,
 } = require("../schemas/users.schema");
 
-const userRouter = Router();
+const userRoutes = Router();
 
-userRouter.post(
+userRoutes.post(
   "",
   ensureEmailExists,
   ensureDataIsValid(userSchemaRequest),
   createUserController
 );
-userRouter.get("", listUserController);
-userRouter.get("/:id", ensureUserExists, retriveUserController);
-userRouter.patch(
+userRoutes.get("", listUserController);
+userRoutes.get("/profile", ensureTokenIsValid, retriveUserController);
+userRoutes.patch(
   "/:id",
+  ensureTokenIsValid,
+  ensureUserPermission,
   ensureUserExists,
   ensureEmailExists,
   ensureDataIsValid(userSchemaUpdate),
   updateUserController
 );
-userRouter.delete(
+userRoutes.delete(
   "/:id",
+  ensureTokenIsValid,
+  ensureUserPermission,
   ensureUserExists,
   ensureDataIsValid(userSchemaUpdate),
   deleteUserController
 );
 
-module.exports = userRouter;
+module.exports = userRoutes;

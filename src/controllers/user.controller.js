@@ -40,10 +40,8 @@ const deleteUserController = async (req, res) => {
 };
 
 const retriveUserController = async (req, res) => {
-  const userId = req.user.id;
-
+  const userId = req.customUser.id;
   const user = await retriveUserService(userId);
-
   return res.json(user);
 };
 

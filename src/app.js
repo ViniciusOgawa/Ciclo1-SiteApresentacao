@@ -6,6 +6,7 @@ const userRoutes = require("./routes/user.routes");
 const contactsRoutes = require("./routes/contacts.routes");
 const loginRoutes = require("./routes/login.routes");
 const templateRoutes = require("./routes/template.routes");
+const addressRoutes = require("./routes/address.routes");
 const { handleErrors } = require("./errors");
 
 app.use(express.json());
@@ -16,6 +17,7 @@ app.set("view engine", "ejs");
 
 require("./database");
 
+app.use("/address", addressRoutes);
 app.use("/users", userRoutes);
 app.use("/login", loginRoutes);
 app.use("/contacts", contactsRoutes);

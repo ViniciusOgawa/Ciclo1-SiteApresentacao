@@ -23,15 +23,15 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      phoneNumber: {
+      phone_number: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      userId: {
+      user_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      addressId: {
+      address_id: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },

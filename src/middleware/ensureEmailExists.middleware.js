@@ -11,8 +11,10 @@ const ensureEmailExists = async (req, res, next) => {
     paranoid: false,
   });
 
-  if (findUser.email === userEmail) {
-    throw new AppError("Email already exists", 409);
+  if (findUser) {
+    if (findUser.email === userEmail) {
+      throw new AppError("Email already exists", 409);
+    }
   }
 
   return next();

@@ -4,7 +4,6 @@ require("express-async-errors");
 const app = express();
 const userRoutes = require("./routes/user.routes");
 const contactsRoutes = require("./routes/contacts.routes");
-const adressRoutes = require("./routes/adress.routes");
 const loginRoutes = require("./routes/login.routes");
 const templateRoutes = require("./routes/template.routes");
 const { handleErrors } = require("./errors");
@@ -20,7 +19,6 @@ require("./database");
 app.use("/users", userRoutes);
 app.use("/login", loginRoutes);
 app.use("/contacts", contactsRoutes);
-app.use("/adress", adressRoutes);
 app.use("/template", templateRoutes);
 
 app.use(handleErrors);

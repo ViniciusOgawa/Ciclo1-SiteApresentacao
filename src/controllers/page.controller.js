@@ -1,5 +1,4 @@
 const fs = require("fs");
-const ejs = require("ejs");
 
 const aboutController = (req, res) => {
   fs.readFile("src/assets/contents/about.txt", "utf8", (err, data) => {

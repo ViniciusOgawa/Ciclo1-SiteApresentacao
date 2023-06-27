@@ -1,0 +1,15 @@
+O Projeto Agendify é uma solução abrangente e intuitiva para o gerenciamento de contatos e agendas online. Com recursos de login seguro, registro de novos usuários, lista de contatos, pesquisa e filtragem avançadas, além de um design moderno, essa aplicação oferece uma experiência completa para os usuários. Seja para uso pessoal ou profissional, o Agendify simplifica a organização e o acesso às informações de contato, tornando o gerenciamento de agendas online uma tarefa fácil e eficiente.
+
+- Projeto Agendify: Uma aplicação web de agenda online.
+- Desenvolvido com React.js: Utiliza a biblioteca React.js como base principal para a construção da interface do usuário.
+- Página de login: Permite que os usuários façam login utilizando suas credenciais únicas.
+- Página de registro: Permite que novos usuários se cadastrem na aplicação.
+- Página inicial: Após o login bem-sucedido, os usuários são redirecionados para a página inicial.
+- Lista de contatos: Na página inicial, os usuários têm acesso a uma lista completa e organizada de contatos cadastrados.
+- Informações dos contatos: Cada contato exibe informações como nome, telefone, e-mail e outras informações adicionais.
+- Adição de contatos: Os usuários podem adicionar novos contatos à sua lista.
+- Edição e exclusão de contatos: Possibilidade de editar as informações existentes e excluir contatos desnecessários.
+- Design moderno e amigável: A aplicação possui uma interface intuitiva e de fácil utilização.
+- Navegação fluída: Os usuários podem navegar pela aplicação de forma fluida e realizar tarefas de maneira simples e eficiente.
+- Uso pessoal e profissional: O Projeto Agendify é adequado tanto para uso pessoal quanto profissional.
+- Organização e acesso fácil: Permite manter as agendas e contatos sempre atualizados e acessíveis de forma prática e eficiente.

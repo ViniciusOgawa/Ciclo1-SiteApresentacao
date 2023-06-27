@@ -53,11 +53,11 @@
       </div>
     </div>
 
-    <div id="myModal" class="modal">
+    <div id="myModalEmail" class="modal">
       <div class="modal-content">
         <div class="header-modal">
           <h3 class="title-modal">Enviar email</h3>
-          <span id="closeModalBtn" class="close">&times;</span>
+          <span id="closeModalBtnEmail" class="close">&times;</span>
         </div>
         <div class="body-modal">
           <div class="box-modal">
@@ -69,6 +69,16 @@
               id="nome"
             />
             <div id="nomeError" class="error-message"></div>
+          </div>
+          <div class="box-modal">
+            <label class="label-modal">Email</label>
+            <input
+              type="text"
+              placeholder="Digite o seu email..."
+              class="input-modal"
+              id="email"
+            />
+            <div id="assuntoError" class="error-message"></div>
           </div>
           <div class="box-modal">
             <label class="label-modal">Assunto</label>
@@ -90,7 +100,9 @@
             ></textarea>
             <div id="mensagemError" class="error-message"></div>
           </div>
-          <button class="button-modal" onclick="enviarEmail()">Enviar</button>
+          <button class="button-modal" onclick="enviarEmail()" id="send-email">
+            Enviar
+          </button>
         </div>
       </div>
     </div>
@@ -98,43 +110,21 @@
     <main>
       <div class="main-container">
         <h1>Sobre mim</h1>
-        <p>
-          Com experiência em desenvolvimento web e paixão pela tecnologia desde
-          o ensino médio, optei pelo curso de Engenharia de Software para
-          aprimorar meu conhecimento. Ao longo do tempo, adquiri habilidades em
-          metodologias ágeis, como Scrum e Kanban, além de ser proficiente em
-          linguagens como HTML, CSS, JavaScript, React.js e TypeScript. Também
-          tenho experiência em desenvolvimento backend com Node.js, Python e
-          frameworks como Django, e em banco de dados como PostgreSQL. Estou
-          sempre em busca de aprimoramento e sou movido pelo desafio de criar
-          soluções inovadoras e eficientes na programação.
-        </p>
+        <p><%= sobreContent %></p>
 
         <h2>Tecnologias:</h2>
 
         <ul>
-          <li>JavaScript (ES6)</li>
-          <li>React</li>
-          <li>TypeScript</li>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>Github</li>
-          <li>Node.js</li>
-          <li>Express</li>
-          <li>Banco de dados SQL</li>
-          <li>PostgreSQL</li>
-          <li>TypeORM</li>
-          <li>Python</li>
-          <li>Construção de APIs RESTful</li>
-          <li>Django</li>
-          <li>ORM</li>
+          <% tecnologias.forEach(function(tec) { %>
+          <li><%= tec %></li>
+          <% }); %>
         </ul>
 
         <div class="btn-contact-box">
           <a href="https://github.com/ViniciusOgawa" class="btn-contact">
             <img src="../assets/img/github.svg" alt="GitHub" class="img-btn" />
           </a>
-          <button id="openModalBtn" class="btn-contact">
+          <button id="openModalBtnEmail" class="btn-contact">
             <img src="../assets/img/email.svg" alt="Linkedin" class="img-btn" />
           </button>
           <a
@@ -152,68 +142,11 @@
     </main>
   </body>
 
-  <script src="../assets/scripts/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/yup"></script>
+  <script src="../assets/scripts/email.js"></script>
 
   <script>
     function redirectToPage(page) {
       window.location.href = "/" + page;
-    }
-
-    const emailSchema = yup.object().shape({
-      nome: Yup.string().required("O campo nome é obrigatório."),
-      assunto: Yup.string().required("O campo assunto é obrigatório."),
-      mensagem: Yup.string().required("O campo mensagem é obrigatório."),
-      email: Yup.string()
-        .email("Digite um email válido.")
-        .required("O campo email é obrigatório."),
-    });
-
-    function enviarEmail() {
-      console.log("ola");
-
-      const nome = document.getElementById("nome").value;
-      const assunto = document.getElementById("assunto").value;
-      const mensagem = document.getElementById("mensagem").value;
-      const email = document.getElementById("email").value;
-
-      const dados = {
-        nome,
-        assunto,
-        mensagem,
-        email,
-      };
-
-      emailSchema
-        .validate(dados, { abortEarly: false })
-        .then(() => {
-          var emailDestinatario = "viniogawa321@gmail.com";
-          var corpo = `Nome: ${nome}\nEmail: ${email}\n\n${mensagem}`;
-          var url =
-            "mailto:" +
-            emailDestinatario +
-            "?subject=" +
-            encodeURIComponent(assunto) +
-            "&body=" +
-            encodeURIComponent(corpo);
-          window.open(url);
-        })
-        .catch((errors) => {
-          console.log("Erros de validação:", errors);
-
-          document.getElementById("nomeError").textContent = "";
-          document.getElementById("assuntoError").textContent = "";
-          document.getElementById("mensagemError").textContent = "";
-          document.getElementById("emailError").textContent = "";
-
-          errors.inner.forEach((error) => {
-            const { path, message } = error;
-            const errorElement = document.getElementById(`${path}Error`);
-            if (errorElement) {
-              errorElement.textContent = message;
-            }
-          });
-        });
     }
   </script>
 </html>

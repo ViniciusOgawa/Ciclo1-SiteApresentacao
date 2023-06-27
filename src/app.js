@@ -8,8 +8,11 @@ const loginRoutes = require("./routes/login.routes");
 const templateRoutes = require("./routes/template.routes");
 const addressRoutes = require("./routes/address.routes");
 const { handleErrors } = require("./errors");
+const cors = require("cors");
 
 app.use(express.json());
+
+app.use(cors());
 
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 app.set("views", path.join(__dirname, "views"));

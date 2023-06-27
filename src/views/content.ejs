@@ -55,38 +55,27 @@
 
     <main>
       <div class="main-container">
-        <h1>Projeto Agendify</h1>
-        <p>
-          Este é um projeto de uma aplicação de agenda online, onde é possível
-          cadastrar contatos, fazer login e se cadastrar como novo usuário. O
-          projeto utiliza React.js como biblioteca principal.
-        </p>
+        <h1><%= title%></h1>
+        <p><%= description %></p>
+
         <h2>Funcionalidades</h2>
-        <p>A aplicação possui as seguintes funcionalidades:</p>
         <ul>
-          <li>
-            <strong>Página de login</strong>: Permite que os usuários façam
-            login com suas credenciais.
-          </li>
-          <li>
-            <strong>Página de registro</strong>: Permite que novos usuários se
-            registrem na aplicação.
-          </li>
-          <li>
-            <strong>Página inicial</strong>: Após fazer login, os usuários são
-            redirecionados para a página inicial, onde podem visualizar a lista
-            de contatos cadastrados.
-          </li>
+          <% funcionalidades.forEach(funcionalidade => { %>
+          <li><%= funcionalidade %></li>
+          <% }); %>
         </ul>
-        <button id="openModalBtn">Login</button>
+        <div class="box-btns">
+          <button class="openModalBtn" id="openModalLogin">Login</button>
+          <button class="openModalBtn" id="openModalRegister">Cadastro</button>
+        </div>
       </div>
     </main>
 
-    <div id="myModal" class="modal">
+    <div id="myModalLogin" class="modal">
       <div class="modal-content">
         <div class="header-modal">
           <h3 class="title-modal">Login</h3>
-          <span id="closeModalBtn" class="close">&times;</span>
+          <span id="closeModalBtnLogin" class="close">&times;</span>
         </div>
         <div class="body-modal">
           <div class="box-modal">
@@ -95,6 +84,7 @@
               type="email"
               placeholder="Digite seu email..."
               class="input-modal"
+              id="email"
             />
           </div>
           <div class="box-modal">
@@ -103,14 +93,71 @@
               type="password"
               placeholder="Digite sua senha..."
               class="input-modal"
+              id="password"
             />
           </div>
-          <Button class="button-modal">Entrar</Button>
+          <p id="alert-invalid-login">Email ou senha inválidos !</p>
+          <p id="alert-all-login">Preencha os campos !</p>
+          <p id="alert-email-login">Digite um email válido !</p>
+          <Button class="button-modal" id="send-login">Entrar</Button>
         </div>
       </div>
     </div>
 
-    <script src="../assets/scripts/index.js"></script>
+    <div id="myModalRegister" class="modal">
+      <div class="modal-content-register">
+        <div class="header-modal">
+          <h3 class="title-modal">Cadastro</h3>
+          <span id="closeModalBtnRegister" class="close">&times;</span>
+        </div>
+        <div class="body-modal-register">
+          <div class="box-modal">
+            <label>Nome</label>
+            <input
+              type="text"
+              placeholder="Digite seu nome..."
+              class="input-modal"
+              id="nameRegister"
+            />
+          </div>
+          <div class="box-modal">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Digite seu email..."
+              class="input-modal"
+              id="emailRegister"
+            />
+          </div>
+          <div class="box-modal">
+            <label class="label-modal">Senha</label>
+            <input
+              type="password"
+              placeholder="Digite sua senha..."
+              class="input-modal"
+              id="passwordRegister"
+            />
+          </div>
+          <div class="box-modal">
+            <label>Telefone</label>
+            <input
+              type="email"
+              placeholder="Digite seu telefone..."
+              class="input-modal"
+              id="phoneRegister"
+            />
+          </div>
+          <p id="alert-email-register">Erro ao cadastrar !</p>
+          <p id="alert-email-register">Digite um email válido !</p>
+          <p id="alert-phone">Digite um telefone válido !</p>
+          <p id="alert-all-register">Preencha os campos !</p>
+          <Button class="button-modal" id="send-register">Cadastrar</Button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/scripts/register.js"></script>
+    <script src="../assets/scripts/login.js"></script>
 
     <script>
       function redirectToPage(page) {

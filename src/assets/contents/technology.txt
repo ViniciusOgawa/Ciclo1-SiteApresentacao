@@ -1,0 +1,12 @@
+Front-end:
+- React: Biblioteca JavaScript de código aberto para construção de interfaces de usuário.
+- Chakra UI: Biblioteca de componentes UI para React com design personalizável e responsivo.
+- Axios: Biblioteca para fazer requisições HTTP no navegador e no Node.js.
+- Yup: Biblioteca para validação de esquemas JavaScript.
+
+Back-end:
+- Node.js: Plataforma JavaScript para desenvolvimento do lado do servidor.
+- Express: Framework web minimalista para Node.js, facilitando a construção de aplicativos e APIs.
+- Zod: Biblioteca de validação de dados JavaScript com sintaxe declarativa para validação de esquemas de objetos.
+- Jsonwebtoken: Biblioteca para criação, assinatura e verificação de tokens JWT em aplicações web.
+- Bcrypt: Biblioteca de criptografia de senhas para Node.js, com funções seguras para armazenamento criptograficamente forte e resistente a ataques de força bruta.

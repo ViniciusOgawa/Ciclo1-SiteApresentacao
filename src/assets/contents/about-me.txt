@@ -1,0 +1,17 @@
+Com experiência em desenvolvimento web e paixão pela tecnologia desde o ensino médio, optei pelo curso de Engenharia de Software para aprimorar meu conhecimento. Ao longo do tempo, adquiri habilidades em metodologias ágeis, como Scrum e Kanban, além de ser proficiente em linguagens como HTML, CSS, JavaScript, React.js e TypeScript. Também tenho experiência em desenvolvimento backend com Node.js, Python e frameworks como Django, e em banco de dados como PostgreSQL. Estou sempre em busca de aprimoramento e sou movido pelo desafio de criar soluções inovadoras e eficientes na programação.
+
+JavaScript (ES6)
+React
+TypeScript
+HTML5
+CSS3
+Github
+Node.js
+Express
+Banco de dados SQL
+PostgreSQL
+TypeORM
+Python
+Construção de APIs RESTful
+Django
+ORM

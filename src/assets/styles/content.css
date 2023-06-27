@@ -60,6 +60,18 @@ strong {
   animation: fadein 0.5s forwards;
 }
 
+.modal-content-register {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-left: 5px solid;
+  border-color: #5ca5a5;
+  border-radius: 5px;
+  width: 600px;
+  height: 450px;
+  animation: fadein 0.5s forwards;
+}
+
 .header-modal {
   display: flex;
   align-items: center;
@@ -72,6 +84,14 @@ strong {
   flex-direction: column;
   justify-content: space-between;
   height: 70%;
+}
+
+.body-modal-register {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
 }
 
 .label-modal {
@@ -132,7 +152,7 @@ strong {
   cursor: pointer;
 }
 
-#openModalBtn {
+.openModalBtn {
   height: 30px;
   width: 300px;
   background-color: #effafa;
@@ -144,10 +164,50 @@ strong {
   cursor: pointer;
 }
 
-#openModalBtn:hover,
-#openModalBtn:focus {
+.openModalBtn:hover,
+.openModalBtn:focus {
   transform: scale(1.05);
   transition: all 0.5s;
+}
+
+#alert-email-login {
+  color: #ce4646;
+  display: none;
+}
+
+#alert-invalid-register {
+  color: #ce4646;
+  display: none;
+}
+
+#alert-invalid-login {
+  color: #ce4646;
+  display: none;
+}
+
+#alert-all-login {
+  color: #ce4646;
+  display: none;
+}
+
+#alert-all-register {
+  color: #ce4646;
+  display: none;
+}
+
+#alert-phone {
+  color: #ce4646;
+  display: none;
+}
+
+#alert-email-register {
+  color: #ce4646;
+  display: none;
+}
+
+.box-btns {
+  display: flex;
+  gap: 20px;
 }
 
 @keyframes fadein {

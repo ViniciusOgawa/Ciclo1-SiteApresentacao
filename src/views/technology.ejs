@@ -57,24 +57,20 @@
   <main>
     <div class="main-container">
       <h1>Tecnologias utilizadas</h1>
-        <div class="techs-box">
-          <h2>Front-end:</h2>
-          <ul>
-            <li><a href="https://reactjs.org/" target="_blank">React</a>: Biblioteca JavaScript de código aberto para construção de interfaces de usuário.</li>
-            <li><a href="https://chakra-ui.com/" target="_blank">Chakra UI</a>: Biblioteca de componentes UI para React com design personalizável e responsivo.</li>
-            <li><a href="https://axios-http.com/" target="_blank">Axios</a>: Biblioteca para fazer requisições HTTP no navegador e no Node.js.</li>
-            <li><a href="https://github.com/jquense/yup" target="_blank">Yup</a>: Biblioteca para validação de esquemas JavaScript.</li>
-          </ul>
-          <h2>Back-end:</h2>
-          <ul>
-            <li><a href="https://nodejs.org/" target="_blank">Node.js</a>: Plataforma JavaScript para desenvolvimento do lado do servidor.</li>
-            <li><a href="https://expressjs.com/" target="_blank">Express</a>: Framework web minimalista para Node.js, facilitando a construção de aplicativos e APIs.</li>
-            <li><a href="https://github.com/jquense/yup" target="_blank">Yup</a>: Biblioteca de validação de dados JavaScript com sintaxe declarativa para validação de esquemas de objetos.</li>
-            <li><a href="https://www.npmjs.com/package/jsonwebtoken" target="_blank">Jsonwebtoken</a>: Biblioteca para criação, assinatura e verificação de tokens JWT em aplicações web.</li>
-            <li><a href="https://www.npmjs.com/package/bcrypt" target="_blank">Bcrypt</a>: Biblioteca de criptografia de senhas para Node.js, com funções seguras para armazenamento criptograficamente forte e resistente a ataques de força bruta.</li>
-          </ul>
-        </div>
-      </ul>
+      <div class="techs-box">
+        <h2>Front-end:</h2>
+        <ul>
+          <% for(let tech of frontEndTechs) { %>
+          <li><%= tech %></li>
+          <% } %>
+        </ul>
+        <h2>Back-end:</h2>
+        <ul>
+          <% for(let tech of backEndTechs) { %>
+          <li><%= tech %></li>
+          <% } %>
+        </ul>
+      </div>
     </div>
   </main>
 

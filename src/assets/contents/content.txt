@@ -1,0 +1,8 @@
+Projeto Agendify
+Este é um projeto de uma aplicação de agenda online, onde é possível cadastrar contatos, fazer login e se cadastrar como novo usuário. O projeto utiliza React.js como biblioteca principal.
+
+Funcionalidades
+
+- Página de login: Permite que os usuários façam login com suas credenciais.
+- Página de registro: Permite que novos usuários se registrem na aplicação.
+- Página inicial: Após fazer login, os usuários são redirecionados para a página inicial, onde podem visualizar a lista de contatos cadastrados.

@@ -52,10 +52,10 @@ sendLogin.addEventListener("click", function () {
   const password = document.getElementById("password").value;
 
   if (email !== "" && password !== "") {
-    const alert = document.getElementById("alert-2");
+    const alert = document.getElementById("alert-all-login");
     alert.style.display = "none";
     if (validateEmail(email)) {
-      const alert = document.getElementById("alert-3");
+      const alert = document.getElementById("alert-email-login");
       alert.style.display = "none";
       const body = {
         email: email,
@@ -64,11 +64,11 @@ sendLogin.addEventListener("click", function () {
 
       postLogin(body);
     } else {
-      const alert = document.getElementById("alert-3");
+      const alert = document.getElementById("alert-email-login");
       alert.style.display = "flex";
     }
   } else {
-    const alert = document.getElementById("alert-2");
+    const alert = document.getElementById("alert-all-login");
     alert.style.display = "flex";
   }
 });

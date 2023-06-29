@@ -1,6 +1,10 @@
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 module.exports = {
   host: "smtp.gmail.com",
   port: 587,
-  user: "agendify0@gmail.com",
-  password: "dhobvglutztdbaxh",
+  user: process.env.SMTP_USER,
+  password: process.env.SMTP_PASS,
 };

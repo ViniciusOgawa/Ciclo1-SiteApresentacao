@@ -50,8 +50,14 @@ sendRegister.addEventListener("click", function () {
   const name = document.getElementById("nameRegister").value;
 
   if (email !== "" && password !== "" && phone !== "" && name !== "") {
+    const alert = document.getElementById("alert-all-register");
+    alert.style.display = "none";
     if (validateEmail(email)) {
+      const alert = document.getElementById("alert-email-register");
+      alert.style.display = "none";
       if (validatePhoneNumber(phone)) {
+        const alert = document.getElementById("alert-phone");
+        alert.style.display = "none";
         const body = {
           email: email,
           password: password,

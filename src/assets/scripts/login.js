@@ -52,7 +52,11 @@ sendLogin.addEventListener("click", function () {
   const password = document.getElementById("password").value;
 
   if (email !== "" && password !== "") {
+    const alert = document.getElementById("alert-2");
+    alert.style.display = "none";
     if (validateEmail(email)) {
+      const alert = document.getElementById("alert-3");
+      alert.style.display = "none";
       const body = {
         email: email,
         password: password,

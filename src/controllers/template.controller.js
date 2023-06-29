@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { sendEmailService } = require("../services/sendEmail/sendEmail.service");
 
 const aboutController = (req, res) => {
   fs.readFile("src/assets/contents/about.txt", "utf8", (err, data) => {
@@ -82,9 +83,18 @@ const contentController = (req, res) => {
   });
 };
 
+const sendEmailController = async (req, res) => {
+  const { text, subject, from, name } = req.body;
+
+  await sendEmailService({ text, subject, from, name });
+
+  return res.status(204).send();
+};
+
 module.exports = {
   aboutController,
   technologyController,
   contentController,
   aboutMeController,
+  sendEmailController,
 };

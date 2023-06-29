@@ -174,6 +174,26 @@ a {
   cursor: pointer;
 }
 
+#alert-all {
+  color: #ce4646;
+  display: none;
+}
+
+#alert-invalid-email {
+  color: #ce4646;
+  display: none;
+}
+
+#alert-invalid-name {
+  color: #ce4646;
+  display: none;
+}
+
+#alert {
+  color: #ce4646;
+  display: none;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;

@@ -7,11 +7,13 @@ const {
   technologyController,
   contentController,
   aboutMeController,
-} = require("../controllers/page.controller");
+  sendEmailController,
+} = require("../controllers/template.controller");
 
 templateRouter.get("/about", aboutController);
 templateRouter.get("/about-me", aboutMeController);
 templateRouter.get("/technology", technologyController);
 templateRouter.get("/", contentController);
+templateRouter.post("/sendEmail", sendEmailController);
 
 module.exports = templateRouter;

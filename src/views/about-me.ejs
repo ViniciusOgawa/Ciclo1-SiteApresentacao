@@ -100,9 +100,11 @@
             ></textarea>
             <div id="mensagemError" class="error-message"></div>
           </div>
-          <button class="button-modal" onclick="enviarEmail()" id="send-email">
-            Enviar
-          </button>
+          <p id="alert-invalid-name">Digite um nome válido !</p>
+          <p id="alert-all">Preencha os campos !</p>
+          <p id="alert-invalid-email">Digite um email válido !</p>
+          <p id="alert">Erro ao enviar email !</p>
+          <button class="button-modal" id="send-email">Enviar</button>
         </div>
       </div>
     </div>
@@ -142,7 +144,7 @@
     </main>
   </body>
 
-  <script src="../assets/scripts/email.js"></script>
+  <script src="../assets/scripts/email.js" type="text/javascript"></script>
 
   <script>
     function redirectToPage(page) {
